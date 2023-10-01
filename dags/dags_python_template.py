@@ -22,13 +22,13 @@ with DAG(
     )
 
     @task(task_id='python_t2')
-    def python_function2(**kwars):
-        print(kwars)
-        print('ds:' + kwars['ds'])
-        print('ts:' + kwars['ts'])
-        print('date_inteval_start:' + str(kwars['date_interval_start']))
-        print('date_inteval_end:' + str(kwars['date_interval_end']))
-        print('task_instance' + str(kwars['ti']))
+    def python_function2(**kwargs):
+        print(kwargs)
+        print('ds:' + kwargs['ds'])
+        print('ts:' + str(kwargs['ts']))
+        print('data_interval_start:' + str(kwargs['data_interval_start']))
+        print('data_interval_end:' + str(kwargs['data_interval_end']))
+        print('task_instance:' + str(kwargs['ti']))
 
 
     python_t1 >> python_function2()
