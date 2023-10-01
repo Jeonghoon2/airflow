@@ -17,7 +17,7 @@ with DAG(
 
 
     py_t1 = PythonOperator(
-        task_it='py_t1',
+        task_it="py_t1",
         python_callable=select_fruit()
     )
 
