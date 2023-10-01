@@ -31,4 +31,4 @@ with DAG(
         print('task_instance' + str(kwars['ti']))
 
 
-    python_t1 >> python_function2
+    python_t1 >> python_function2()
