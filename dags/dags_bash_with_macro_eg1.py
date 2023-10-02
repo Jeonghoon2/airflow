@@ -10,8 +10,8 @@ with DAG(
 ) as dag:
     bash_task_1 = BashOperator(
         task_id="bash_task_1",
-        env={'START_DATE':'{{ }}',
-             'END_DATE':'{{}}'
+        env={'START_DATE':'{{ date_interval_start.in_timezone("Asia/Seoul") | ds }}',
+             'END_DATE':'{{ (date_interval_end.in_timezone("Asia/seoul") - macros.dateutil.rerativedelta.relativedelta(day=1)) | ds }}'
             },
             bash_command='echo "START_DATE: $START_DATE" && echo "END_DATE: $END_DATE"'
-    )
+    ) 
