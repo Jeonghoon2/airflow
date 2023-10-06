@@ -43,5 +43,7 @@ with DAG(
             python_callable=inner_func,
             op_kwargs={'msg':'두 번째 TaskGroup내 두번째  task입니다.'}
         )
+    
+        inner_func>> inner_function2
 
     group_1() >> group_2
