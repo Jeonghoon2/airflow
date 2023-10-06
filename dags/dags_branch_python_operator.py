@@ -1,7 +1,6 @@
 from airflow import DAG
 import pendulum
 from airflow.operators.python import BranchPythonOperator, PythonOperator
-from 
 
 
 with DAG(
