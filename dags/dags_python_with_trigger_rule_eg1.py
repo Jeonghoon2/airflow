@@ -1,7 +1,6 @@
 from airflow import DAG
 import pendulum
 from airflow.decorators import task
-from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
 from airflow.exceptions import AirflowException
 

@@ -1,4 +1,3 @@
-from typing import Iterable
 from airflow import DAG
 from airflow.utils.context import Context
 import pendulum
