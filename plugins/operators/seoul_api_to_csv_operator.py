@@ -1,7 +1,5 @@
-from typing import Any
 from airflow.models.baseoperator import BaseOperator
 from airflow.hooks.base import BaseHook
-from airflow.utils.context import Context
 import pandas as pd
 
 class SeoulApiToCsvOperator(BaseOperator):
