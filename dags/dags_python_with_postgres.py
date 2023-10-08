@@ -13,7 +13,7 @@ with DAG(
         import psycopg2
         from contextlib import closing
         
-        with closing(psycopg2.connect(host=ip, dbname=dbname, user=user, password=passwd, port=int(port))) as conn:
+        with closing(psycopg2.connect(host=ip, port=int(port), dbname=dbname, user=user, password=passwd)) as conn:
             with closing(conn.cursor()) as cursor:
                 dag_id = kwargs.get('ti').dag_id
                 task_id = kwargs.get('ti').task_id
@@ -25,8 +25,8 @@ with DAG(
 
     insrt_postgres = PythonOperator(
         task_id = 'insrt_postgres',
-        python_callable= insrt_postgres,
-        op_args=['172.30.1.50','5432','airflow','airflow','airflow']
+        python_callable=insrt_postgres,
+        op_args=['jeong.ddns.net','1002','airflow','airflow','airflow']
     )
 
     insrt_postgres
