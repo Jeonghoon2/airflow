@@ -19,5 +19,5 @@ with DAG(
         python_callable=insrt_postgres,
         op_kwargs={'postgres_conn_id': 'conn-db-postres-custom',
                    'tbl_nm': 'seoul_picture_bulk_1',
-                   'file_nm': '/opt/airflow/files/SemaPsgudInfoKorInfo/{{data_interval_end.in_timezone("Asia/Seoul") | ds_nodash}}/SemaPsgudInfoKorInfo'}
+                   'file_nm': '/opt/airflow/files/SemaPsgudInfoKorInfo/{{data_interval_end.in_timezone("Asia/Seoul") | ds_nodash}}/SemaPsgudInfoKorInfo.csv'}
     )
