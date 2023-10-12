@@ -1,7 +1,7 @@
 from airflow import DAG
 import pendulum
 from airflow.operators.python import PythonOperator
-from hooks.custom_postgres_hook import CustomPostgresHook
+from plugins.hooks.custom_postgres_hook import CustomPostgresHook
 
 with DAG(
         dag_id='dags_python_with_custom_hook_bulk_load',
@@ -18,8 +18,8 @@ with DAG(
     insrt_postgres = PythonOperator(
         task_id='insrt_postgres',
         python_callable=insrt_postgres,
-        op_kwargs={'postgres_coon_id':'conn-db-postgres-custom',
-                   'tbl_nm':'seoul_picture_bulk_2',
+        op_kwargs={'postgres_coon_id': 'conn-db-postgres-custom',
+                   'tbl_nm': 'seoul_picture_bulk_2',
                    'file_nm': '/opt/airflow/files/SemaPsgudInfoKorInfo/{{data_interval_end.in_timezone("Asia/Seoul") | ds_nodash}}/SemaPsgudInfoKorInfo.csv'
                    }
     )
