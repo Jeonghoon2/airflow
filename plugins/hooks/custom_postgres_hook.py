@@ -33,7 +33,7 @@ class CustomPostgresHook(BaseHook):
         for col in file_df.columns:
             try:
                 # String 문자열이 아닐 경우 Continue
-                file_df[col] = file_df[col].str.replace('\r\n' , '')
+                file_df[col] = file_df[col].str.replace('\r\n', '')
                 self.log.info(f'{table_name}.{col}: 개행문자 제거')
             except:
                 continue
@@ -47,5 +47,3 @@ class CustomPostgresHook(BaseHook):
                        if_exists=if_exists,
                        index=False
                        )
-
-
