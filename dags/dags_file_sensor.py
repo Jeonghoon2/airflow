@@ -8,8 +8,8 @@ with DAG(
         schedule='0 7 * * *',
         catchup=False
 ) as dag:
-    tvCorona19VaccinestatNew_sensor = FileSensor(
-        task_id='tvCorona19VaccinestatNew_sensor',
+    SemaPsgudInfoKorInfo_sensor = FileSensor(
+        task_id='SemaPsgudInfoKorInfo_sensor',
         fs_conn_id='conn_file_opt_airlfow_files',
         filepath='SemaPsgudInfoKorInfo/{{data_interval_end.in_timezone("Asia/Seoul") | ds_nodash}}/SemaPsgudInfoKorInfo.csv',
         recursive=False,
