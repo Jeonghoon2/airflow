@@ -15,5 +15,5 @@ with DAG(
         recursive=False,
         poke_interval=60,
         timeout=60*60*24,
-        mode='reschedule'
+        mode='poke'
     )
