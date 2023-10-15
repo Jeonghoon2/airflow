@@ -25,4 +25,3 @@ with DAG(
         poke_interval=600,
         mode='reschedule'
     )
-
